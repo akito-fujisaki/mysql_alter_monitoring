@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "mysql_alter_monitoring/version"
+require_relative 'mysql_alter_monitoring/version'
 
 module MysqlAlterMonitoring
   class Error < StandardError; end

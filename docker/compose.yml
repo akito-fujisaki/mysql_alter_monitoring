@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+    volumes:
+      - db-data:/var/lib/mysql
+  gem:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/src
+    environment:
+      - DATABASE_URL=mysql2://root:pass@db
+    depends_on:
+      - db
+
+volumes:
+  db-data:
+    driver: local

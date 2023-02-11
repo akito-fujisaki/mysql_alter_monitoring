@@ -14,7 +14,6 @@ namespace :lint do
   task fix: :autocorrect
 end
 
-# yard
 desc 'Generate and Check code documents'
 task :doc do
   require 'yard'

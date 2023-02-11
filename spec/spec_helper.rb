@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
+require 'time'
 require 'mysql_alter_monitoring'
+
+Dir[File.expand_path('support/*.rb', __dir__)].sort.each { require _1 }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,4 +15,8 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include TimeHelper
+  config.include TestDatabaseHelper
+  config.include SnapshotHelper
 end

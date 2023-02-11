@@ -1,24 +1,32 @@
 # MysqlAlterMonitoring
 
-TODO: Delete this and the text below, and describe your gem
+Monitoring ALTER TABLE Progress for InnoDB Tables Using Performance Schema.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mysql_alter_monitoring`. To experiment with that code, run `bin/console` for an interactive prompt.
+See: https://dev.mysql.com/doc/refman/8.0/en/monitor-alter-table-performance-schema.html
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```
+gem 'mysql_alter_monitoring'
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+And then execute:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+```
+$ bundle install
+```
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Or install it yourself as:
+
+```
+$ gem install mysql_alter_monitoring
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO
 
 ## Development
 
@@ -28,7 +36,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mysql_alter_monitoring. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/mysql_alter_monitoring/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/akito-fujisaki/mysql_alter_monitoring . This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/akito-fujisaki/mysql_alter_monitoring/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 

@@ -12,6 +12,7 @@ require_relative 'mysql_alter_monitoring/performance_schema_setting'
 require_relative 'mysql_alter_monitoring/json_logger'
 require_relative 'mysql_alter_monitoring/client'
 require_relative 'mysql_alter_monitoring/monitor'
+require_relative 'mysql_alter_monitoring/cli'
 
 # MysqlAlterMonitoring
 module MysqlAlterMonitoring

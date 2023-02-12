@@ -6,6 +6,9 @@ module MysqlAlterMonitoring
     # @return [String]
     SUPPROTED_URI_SCHEME = 'mysql2'
     private_constant :SUPPROTED_URI_SCHEME
+    # @return [Integer]
+    DEFAULT_PORT = 3306
+    public_constant :DEFAULT_PORT
 
     class << self
       # Build config in DATABSE_URL format used in Rails.
@@ -46,11 +49,24 @@ module MysqlAlterMonitoring
     # @param user [String]
     # @param password [String]
     # @return [void]
+    # @raise [ArgumentError]
     def initialize(host:, port:, user:, password:)
       @host = host
-      @port = port || 3306
+      @port = port || DEFAULT_PORT
       @user = user
       @password = password
+      validate!
+    end
+
+    private
+
+    # @return [void]
+    # @raise [ArgumentError]
+    def validate!
+      raise ArgumentError, 'host must be specified' if host.empty?
+      raise ArgumentError, 'port must be positive' unless port.positive?
+      raise ArgumentError, 'user must be specified' if user.empty?
+      raise ArgumentError, 'password must be specified' if password.empty?
     end
   end
 end

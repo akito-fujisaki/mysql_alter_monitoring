@@ -44,4 +44,48 @@ RSpec.describe MysqlAlterMonitoring::Config do
       it { expect { build_by_url }.to raise_error ArgumentError }
     end
   end
+
+  describe '#new' do
+    subject(:new) do
+      described_class.new(
+        host: host,
+        port: port,
+        user: user,
+        password: password
+      )
+    end
+
+    let(:host) { '0.0.0.0' }
+    let(:port) { 3_306 }
+    let(:user) { 'root' }
+    let(:password) { 'pass' }
+
+    context 'when args are valid' do
+      it { is_expected.to be_an_instance_of described_class }
+    end
+
+    context 'when host is empty string' do
+      let(:host) { '' }
+
+      it { expect { new }.to raise_error ArgumentError }
+    end
+
+    context 'when port is 0' do
+      let(:port) { 0 }
+
+      it { expect { new }.to raise_error ArgumentError }
+    end
+
+    context 'when user is empty string' do
+      let(:user) { '' }
+
+      it { expect { new }.to raise_error ArgumentError }
+    end
+
+    context 'when password is empty string' do
+      let(:password) { '' }
+
+      it { expect { new }.to raise_error ArgumentError }
+    end
+  end
 end

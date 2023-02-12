@@ -3,7 +3,7 @@
 RSpec.describe MysqlAlterMonitoring::Monitor do
   let(:io) { StringIO.new }
   let(:monitor) { described_class.new(build_client, io, logging_interval: 0.1) }
-  let(:performance_schema_setting) { MysqlAlterMonitoring::PerformanceSchemaSetting.new(build_client) }
+  let(:performance_schema_setting) { MysqlAlterMonitoring::PerformanceSchemaSetting.new(build_client, StringIO.new) }
 
   describe '#run_until_empty_event' do
     subject(:logs) { io.tap(&:rewind).readlines.map { JSON.parse(_1, symbolize_names: true) } }

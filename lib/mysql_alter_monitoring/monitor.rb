@@ -15,7 +15,7 @@ module MysqlAlterMonitoring
       @client = client
       @logger = JsonLogger.new(io)
       @logging_interval = logging_interval
-      @performance_schema_setting = PerformanceSchemaSetting.new(client)
+      @performance_schema_setting = PerformanceSchemaSetting.new(client, io)
     end
 
     # Fetch ALTER TABLE events at specified intervals and output in JSON format to specified IO.

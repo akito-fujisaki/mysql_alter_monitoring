@@ -8,9 +8,8 @@ services:
     volumes:
       - db-data:/var/lib/mysql
   gem:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
+    build: .
+    image: mysql-alter-logging
     volumes:
       - .:/src
     environment:

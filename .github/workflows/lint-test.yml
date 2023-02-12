@@ -1,0 +1,28 @@
+name: Lint and test
+on:
+  push:
+    branches: ['**']
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Up dependency container
+        run: docker compose up db -d
+      - name: Build image
+        uses: ./.github/actions/build-image
+        with:
+          cache-key: mysql-alter-monitoring
+          context: .
+          tags: mysql-alter-monitoring:latest
+          load: true
+          push: false
+      - name: Run lint
+        run: docker compose run --rm --no-deps gem bash -c "bin/rake lint"
+      - name: Run test
+        run: docker compose run --rm --no-deps gem bash -c "bin/rake spec"
+      - name: Run doc
+        run: docker compose run --rm --no-deps gem bash -c "bin/rake doc"

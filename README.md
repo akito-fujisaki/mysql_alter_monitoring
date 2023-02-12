@@ -33,13 +33,13 @@ TODO
 To develop on docker, build first.
 
 ```
-$ bin/docker-compose build
+$ docker compose build
 ```
 
 Enter docker container and run rake task etc.
 
 ```
-$ bin/docker-compose run --rm gem bash
+$ docker compose run --rm gem bash
 ```
 
 ### rspec

@@ -15,4 +15,4 @@ COPY bin/setup ./bin/
 COPY Gemfile Gemfile.lock mysql_alter_monitoring.gemspec ./
 COPY lib/mysql_alter_monitoring/version.rb ./lib/mysql_alter_monitoring/
 
-RUN bin/setup
+RUN bundle install -j4

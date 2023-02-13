@@ -26,7 +26,44 @@ $ gem install mysql_alter_monitoring
 
 ## Usage
 
-TODO
+### Command line
+
+All commands require the specification of host, user name, password.
+
+It can also be specified in URL format using the --url option.
+
+#### Enable monitoring settings for the performance schema
+
+```
+$ mysql-alter-monitoring enable --url mysql2://root:pass@localhost:3306
+
+# When specifying host, user, password, etc. separately
+$ mysql-alter-monitoring enable --host localhost --port 3306 --user root --password pass
+```
+
+#### Disable monitoring settings for the performance schema
+
+```
+$ mysql-alter-monitoring disable --url mysql2://root:pass@localhost:3306
+```
+
+#### Start monitoring until event empty
+
+```
+$ mysql-alter-monitoring run --url mysql2://root:pass@localhost:3306
+```
+
+#### Start monitoring forever
+
+```
+$ mysql-alter-monitoring run-forever --url mysql2://root:pass@localhost:3306
+```
+
+#### Show help
+
+```
+$ mysql-alter-monitoring -h
+```
 
 ## Development
 
@@ -73,6 +110,7 @@ $ bin/rake doc
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/akito-fujisaki/mysql_alter_monitoring.
+
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/akito-fujisaki/mysql_alter_monitoring/blob/main/CODE_OF_CONDUCT.md).
 
 ## License

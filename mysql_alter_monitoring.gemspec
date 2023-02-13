@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://github.com/akito-fujisaki/mysql_alter_monitoring'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
+  spec.files = Dir['{exe,lib}/**/*', '*.md']
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
@@ -29,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'mysql2'
+  spec.add_dependency 'mysql2', '>= 0.5.0'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end

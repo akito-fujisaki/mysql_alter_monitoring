@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    mysql_alter_monitoring (0.1.0)
-      mysql2
+    mysql_alter_monitoring (0.1.1)
+      mysql2 (>= 0.5.0)
 
 GEM
   remote: https://rubygems.org/

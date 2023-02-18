@@ -1,4 +1,4 @@
-# MysqlAlterMonitoring
+# MysqlAlterMonitoring [![Gem Version](https://badge.fury.io/rb/mysql_alter_monitoring.svg)](https://badge.fury.io/rb/mysql_alter_monitoring)
 
 Monitoring ALTER TABLE Progress for InnoDB Tables Using Performance Schema.
 

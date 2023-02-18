@@ -8,7 +8,7 @@ module MysqlAlterMonitoring
     # @param args [Array<String>]
     # @param io [::IO]
     # @return [void]
-    def initialize(args, io: $stdout)
+    def initialize(args, io: $stdout.tap { _1.sync = true })
       @args = args
       @io = io
       @options = {}
